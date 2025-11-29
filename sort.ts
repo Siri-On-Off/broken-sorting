@@ -27,7 +27,7 @@ export function insertionSort(numbers: Array<number>): Array<number> {
 export function selectionSort(numbers: Array<number>): Array<number> {
   const xs = [...numbers];
   const n = xs.length;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; !isSorted(xs); i++) {
     let x = Number.POSITIVE_INFINITY;
     let k = i;
     for (let j = i; j < n; j++) {
