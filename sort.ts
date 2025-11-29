@@ -14,7 +14,18 @@ export function bubbleSort(numbers: Array<number>): Array<number> {
 }
 
 export function insertionSort(numbers: Array<number>): Array<number> {
-  return numbers;
+  const xs = [...numbers];
+  const n = xs.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < i; j++) {
+      if (xs[i] < xs[j]) {
+        const swap = xs[i];
+        xs[i] = xs[j];
+        xs[j] = swap;
+      }
+    }
+  }
+  return xs;
 }
 
 export function selectionSort(numbers: Array<number>): Array<number> {
