@@ -45,7 +45,16 @@ Once the commit has been found, reset to HEAD and finish bisecting:
 
     git bisect reset
 
-Now the found commit can be reverted:
+Inspect the changes introduced by the commit:
+
+    git show COMMIT
+
+Undo the entire commit, if all the changes are bogus:
 
     git revert COMMIT
 
+Just checkout a single file, if the other changes are valid:
+
+    git checkout COMMIT~1 -- file/containing/bogus/commit
+
+Note that the file is checked out from one commit _earlier_ (suffix `~1`) than the one that introduced the harmful change.
